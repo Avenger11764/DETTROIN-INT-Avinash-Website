@@ -25,7 +25,6 @@ const Contact = () => {
 
   return (
     <div className="bg-[#f8f9fa]/40 text-[#191c1d] font-body-md overflow-x-hidden pt-20 relative z-1">
-      {/* 1. Hero Header Section */}
       <section className="relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center z-1">
         <span className="reveal-drop bg-[#feb300] text-[#281900] px-5 py-2 rounded-full font-label-md text-xs font-bold uppercase tracking-wider inline-block mb-4 shadow-sm">
           WE ARE HERE TO HELP
@@ -38,10 +37,8 @@ const Contact = () => {
         </p>
       </section>
 
-      {/* 2. Main Contact Grid */}
       <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-1">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left: Interactive Form */}
           <div className="lg:col-span-7 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-[#c6c5d4] space-y-6 relative z-10 reveal-left">
             <h3 className="font-headline-lg text-2xl sm:text-3xl font-extrabold text-[#000666]">
               Send Us a Message
@@ -133,7 +130,6 @@ const Contact = () => {
             )}
           </div>
 
-          {/* Right: Quick Contact Cards */}
           <div className="lg:col-span-5 space-y-6 relative z-10 reveal-right">
             <div className="bg-white p-8 rounded-3xl shadow-md border border-[#c6c5d4] flex items-start gap-5 hover-lift">
               <div className="w-14 h-14 bg-[#e0e0ff] text-[#000666] rounded-2xl flex items-center justify-center flex-shrink-0">
@@ -172,7 +168,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* 3. Google Maps Embedded Section */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-1 reveal-zoom">
         <div className="bg-white p-6 rounded-3xl shadow-xl border border-[#c6c5d4] overflow-hidden space-y-4">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-4 pt-2">
@@ -191,7 +186,6 @@ const Contact = () => {
             </a>
           </div>
 
-          {/* Embedded Google Maps iFrame */}
           <div className="w-full h-96 rounded-2xl overflow-hidden shadow-inner border border-[#c6c5d4]/50 relative z-10">
             <iframe
               title="Krishna International School Aligarh Location Map"
@@ -207,7 +201,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* 4. Department Directory Cards */}
       <section className="py-16 bg-[#edeeef]/40 relative z-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 reveal-drop">
@@ -222,7 +215,7 @@ const Contact = () => {
               <p className="text-sm font-bold text-[#7e5700] pt-2">principal@kisaligarh.com</p>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#c6c5d4] space-y-3 reveal-fade delay-100 hover-lift relative z-10">
+            <div className="bg-[#fff] p-8 rounded-3xl shadow-sm border border-[#c6c5d4] space-y-3 reveal-fade delay-100 hover-lift relative z-10">
               <h4 className="font-bold text-[#000666] text-xl">Accounts & Fee Desk</h4>
               <p className="text-xs text-[#454652]">For fee payment & receipt queries</p>
               <p className="text-sm font-bold text-[#7e5700] pt-2">accounts@kisaligarh.com</p>

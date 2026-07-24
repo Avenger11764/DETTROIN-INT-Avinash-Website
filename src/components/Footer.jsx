@@ -3,12 +3,17 @@ import { Link } from 'react-router-dom';
 import Logo from './Logo';
 
 const Footer = () => {
+  const handleLogoClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="bg-[#181b23] text-white w-full rounded-t-[2.5rem] mt-20 relative z-10">
-      <div className="max-w-[1360px] mx-auto px-6 md:px-16 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
-        {/* Brand Info */}
+    <footer className="bg-[#181b23] text-white w-full rounded-t-3xl md:rounded-t-4xl mt-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
         <div className="space-y-6">
-          <Logo variant="light" />
+          <Link to="/" onClick={handleLogoClick} className="inline-block hover:opacity-90 transition-opacity">
+            <Logo variant="light" />
+          </Link>
           <p className="text-[#c4c6d2] text-sm leading-relaxed max-w-sm">
             Empowering minds, enriching lives, and shaping future global citizens through value-based excellence in Aligarh.
           </p>
@@ -25,7 +30,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Quick Links */}
         <div>
           <h4 className="font-bold text-lg mb-6 tracking-wide text-white">Quick Links</h4>
           <ul className="space-y-3.5 text-sm">
@@ -37,7 +41,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Resources */}
         <div>
           <h4 className="font-bold text-lg mb-6 tracking-wide text-white">Resources</h4>
           <ul className="space-y-3.5 text-sm">
@@ -48,7 +51,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact Info */}
         <div className="space-y-4">
           <h4 className="font-bold text-lg mb-6 tracking-wide text-white">Contact Us</h4>
           <div className="flex items-start gap-3 text-sm text-[#c4c6d2]">

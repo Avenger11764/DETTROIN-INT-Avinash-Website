@@ -9,7 +9,6 @@ const CrestShieldLogo = ({ size = 44 }) => (
     xmlns="http://www.w3.org/2000/svg"
     className="flex-shrink-0 drop-shadow-md"
   >
-    {/* Outer Gold Border Shield */}
     <path
       d="M10 5 H90 V65 L50 105 L10 65 Z"
       fill="#1c3d6e"
@@ -18,13 +17,11 @@ const CrestShieldLogo = ({ size = 44 }) => (
       strokeLinejoin="round"
     />
 
-    {/* Inner Yellow Shield Crest */}
     <path
       d="M20 18 Q35 12 50 10 Q65 12 80 18 C78 40 78 50 50 82 C22 50 22 40 20 18 Z"
       fill="#ffcc00"
     />
 
-    {/* Red Rising Sun & People Figures Motif */}
     <g fill="#c62828">
       <circle cx="40" cy="22" r="3.5" />
       <circle cx="50" cy="19" r="4" />
@@ -36,7 +33,6 @@ const CrestShieldLogo = ({ size = 44 }) => (
       <path d="M28 47 Q38 43 50 49 Q62 43 72 47 Q62 52 50 50 Q38 52 28 47 Z" stroke="#c62828" strokeWidth="1.5" fill="#ffcc00" />
     </g>
 
-    {/* Crest Text */}
     <text x="50" y="58" textAnchor="middle" fill="#1c3d6e" fontSize="7" fontWeight="bold" fontFamily="serif">
       Krishna
     </text>
@@ -54,10 +50,8 @@ const Logo = ({ variant = 'dark', className = '' }) => {
 
   return (
     <div className={`flex items-center gap-3.5 select-none ${className}`}>
-      {/* Official Shield Crest */}
       <CrestShieldLogo size={40} />
 
-      {/* Official Typography Logo Text */}
       <div className="flex flex-col justify-center leading-none">
         <div className="flex items-baseline gap-1.5">
           <span

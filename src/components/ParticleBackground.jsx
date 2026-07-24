@@ -4,6 +4,8 @@ const ParticleBackground = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    if (window.innerWidth < 1024) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -96,7 +98,6 @@ const ParticleBackground = () => {
       mouse.x += (mouse.targetX - mouse.x) * 0.2;
       mouse.y += (mouse.targetY - mouse.y) * 0.2;
 
-      // Mouse Spotlight Aura (z-0 behind images)
       if (mouse.active) {
         const aura = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, mouse.radius);
         aura.addColorStop(0, 'rgba(254, 179, 0, 0.3)');
@@ -161,7 +162,7 @@ const ParticleBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0 w-full h-full opacity-90"
+      className="hidden lg:block fixed inset-0 pointer-events-none z-0 w-full h-full opacity-90"
     />
   );
 };

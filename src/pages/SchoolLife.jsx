@@ -59,7 +59,6 @@ const sportsData = [
 const SchoolLife = () => {
   return (
     <div className="bg-[#f8f9fa]/40 text-[#191c1d] font-body-md overflow-x-hidden pt-20 relative z-1">
-      {/* 1. Hero Banner Section */}
       <section className="relative h-[480px] flex items-center justify-center overflow-hidden mb-16 z-1">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[#000666]/50 z-10 backdrop-blur-[2px]" />
@@ -84,7 +83,6 @@ const SchoolLife = () => {
         </div>
       </section>
 
-      {/* 2. Campus Clubs & Societies */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-1">
         <div className="text-center mb-16 reveal-drop">
           <span className="text-[#7e5700] font-label-md text-sm font-bold uppercase tracking-wider">
@@ -128,7 +126,6 @@ const SchoolLife = () => {
         </div>
       </section>
 
-      {/* 3. Sports & Athletics Excellence */}
       <section className="bg-[#f3f4f5]/50 py-20 relative z-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 reveal-drop">
@@ -174,7 +171,6 @@ const SchoolLife = () => {
         </div>
       </section>
 
-      {/* 4. Join Us CTA Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 relative z-10 reveal-zoom">
         <div className="bg-[#000666] text-white rounded-3xl p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
           <div className="relative z-10 text-center md:text-left space-y-2">

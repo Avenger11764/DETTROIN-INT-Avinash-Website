@@ -1,17 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const alumniData = [
+  {
+    name: 'Aman Verma',
+    batch: 'Batch of 2019',
+    achievement: 'IIT Delhi (B.Tech CS)',
+    role: 'Software Engineer at Google',
+    img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
+    quote: 'The strong foundation in Mathematics and Robotics at KIS gave me the confidence to crack JEE Advanced.',
+  },
+  {
+    name: 'Dr. Priya Sharma',
+    batch: 'Batch of 2020',
+    achievement: 'AIIMS New Delhi (MBBS)',
+    role: 'Resident Medical Officer',
+    img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80',
+    quote: 'The biology lab facilities and continuous mentorship by KIS teachers guided my path into AIIMS.',
+  },
+  {
+    name: 'Capt. Rohan Gupta',
+    batch: 'Batch of 2018',
+    achievement: 'Commercial Pilot License',
+    role: 'First Officer, Air India',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80',
+    quote: 'Sports and leadership activities at Krishna International built the discipline I needed for aviation.',
+  },
+  {
+    name: 'Ananya Singh',
+    batch: 'Batch of 2021',
+    achievement: 'NLSIU Bengaluru (BA LLB)',
+    role: 'Corporate Legal Associate',
+    img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80',
+    quote: 'Debating society and public speaking workshops at school honed my analytical and legal reasoning skills.',
+  },
+];
+
 const About = () => {
   return (
     <div className="bg-[#f8f9fa]/40 text-[#191c1d] font-body-md overflow-x-hidden pt-20 relative z-1">
-      {/* 1. Hero Section */}
       <section className="relative min-h-[520px] flex items-center overflow-hidden bg-[#1a237e]/90 text-white z-10 shadow-lg">
         <div className="absolute inset-0 opacity-30 pointer-events-none">
           <div
             className="w-full h-full bg-cover bg-center"
             style={{
-              backgroundImage:
-                "url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7YcV-DXBEiLLc_Icdw-hVloxWZFVge5jIgi6Tse9JG0T_4eYwUuj82W93bnILacJFuNQUs8Gaap6ky3Lifqzo-PF2Z_zDgEHijep3UIxdA2o0WCnWdgL7_XuKHkKBnOJpnOFd_51q3OcKjmvABFYReXwMSZBUaZrJtl5hAPKBpylMdSqM96XQ57u1ZZL_2QihY5JzEDSHTJZQnc-frE6faqQJfCofggCY-2qa1P4RG16nzoRqLbrr2DGOFF8uOtg-yF5KhCnoUF_S')",
+              backgroundImage: "url('/school-building.jpg')",
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#000666] via-[#000666]/90 to-transparent" />
@@ -46,17 +79,15 @@ const About = () => {
         </div>
       </section>
 
-      {/* 2. History Section */}
       <section className="py-20 bg-[#f8f9fa]/50 relative z-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Image Box */}
             <div className="relative z-10 reveal-left">
               <div className="rounded-3xl overflow-hidden shadow-xl aspect-[4/3] border border-[#c6c5d4] bg-white">
                 <img
                   className="w-full h-full object-cover relative z-10"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcOocSxmMBMezaBOHyKKiesAb43vBcBH00MrnjBKS86eVrp59EyDpuaoMGNBs27IuhCDkFunZKRK2T-X52NigY5crF8mPKvs2H1zhab7vws5b9dIxXl2iB1b1HqI0ObWx7HJgFC85TbWTEFqE49nBLWbqlAyFuTd0rFlSdZL8-6zC2LbdIJ8HLJzRvzOm7zWfLQk3w7ffMFB2v6pmy_-vcMEMu-d8mzyVs_CT7FdBgLxgvDLtaelCh3atQjAbVzwNULfja7CgDfauF"
-                  alt="Krishna International History"
+                  src="/school-building.jpg"
+                  alt="Krishna International School Aligarh Main Building & Lawns"
                   loading="lazy"
                   decoding="async"
                 />
@@ -67,7 +98,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* History Content */}
             <div className="space-y-6 reveal-right">
               <span className="text-[#7e5700] font-label-md text-sm font-bold uppercase tracking-wider">
                 OUR STORY
@@ -79,7 +109,7 @@ const About = () => {
                 Krishna International School was founded with a visionary commitment: to offer a transformative educational experience that combines modern technological learning with traditional Indian values.
               </p>
               <p className="font-body-md text-base text-[#454652] leading-relaxed">
-                From a modest beginning in 2010, KIS has grown into a premier 25-acre CBSE institution in Aligarh, nurturing thousands of confident, compassionate, and academically brilliant young minds.
+                From a modest beginning in 2010, KIS has grown into a premier 5-acre CBSE institution in Aligarh, nurturing thousands of confident, compassionate, and academically brilliant young minds.
               </p>
               <div className="grid grid-cols-2 gap-6 pt-4">
                 <div className="border-l-4 border-[#7e5700] pl-4 reveal-zoom delay-100">
@@ -96,7 +126,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* 3. Vision & Mission Cards */}
       <section className="py-20 bg-[#edeeef]/40 relative z-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 reveal-drop">
@@ -132,7 +161,54 @@ const About = () => {
         </div>
       </section>
 
-      {/* 4. Leadership Section */}
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-1">
+        <div className="text-center mb-16 reveal-drop">
+          <span className="text-[#7e5700] font-label-md text-sm font-bold uppercase tracking-wider">
+            GLOBAL ACHIEVERS & ALUMNI
+          </span>
+          <h2 className="font-headline-lg text-3xl sm:text-5xl font-extrabold text-[#000666] mt-2 mb-4">
+            Alumni Success Wall
+          </h2>
+          <p className="font-body-md text-base sm:text-lg text-[#454652] max-w-2xl mx-auto">
+            Our graduates are making marks across premier institutions and global leadership roles.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {alumniData.map((alumnus, idx) => (
+            <div
+              key={idx}
+              className={`bg-white rounded-3xl p-6 shadow-md border border-[#c6c5d4] flex flex-col justify-between space-y-4 hover-lift relative z-10 reveal-zoom delay-${
+                idx * 100
+              }`}
+            >
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <img
+                    className="w-14 h-14 rounded-full object-cover border-2 border-[#feb300] shadow-sm flex-shrink-0"
+                    src={alumnus.img}
+                    alt={alumnus.name}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div>
+                    <h4 className="font-bold text-[#000666] text-lg leading-tight">{alumnus.name}</h4>
+                    <p className="text-xs text-[#7e5700] font-bold">{alumnus.batch}</p>
+                  </div>
+                </div>
+                <div className="bg-[#f3f4f5] p-3 rounded-2xl space-y-1">
+                  <p className="text-xs font-bold text-[#000666]">{alumnus.achievement}</p>
+                  <p className="text-[11px] text-[#454652] font-semibold">{alumnus.role}</p>
+                </div>
+                <p className="text-xs text-[#454652] italic leading-relaxed">
+                  "{alumnus.quote}"
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-1">
         <div className="text-center mb-16 reveal-drop">
           <span className="text-[#7e5700] font-label-md text-sm font-bold uppercase tracking-wider">
@@ -144,7 +220,6 @@ const About = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Chairman */}
           <div className="bg-white p-8 md:p-10 rounded-3xl shadow-md border border-[#c6c5d4] flex flex-col justify-between relative z-10 reveal-left hover-lift">
             <div className="space-y-4">
               <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[#1a237e] shadow-sm">
@@ -164,7 +239,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Principal */}
           <div className="bg-white p-8 md:p-10 rounded-3xl shadow-md border border-[#c6c5d4] flex flex-col justify-between relative z-10 reveal-right delay-100 hover-lift">
             <div className="space-y-4">
               <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[#1a237e] shadow-sm">
