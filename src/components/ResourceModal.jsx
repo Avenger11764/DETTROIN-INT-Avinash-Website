@@ -6,8 +6,15 @@ const ResourceModal = ({ type, onClose }) => {
   const [password, setPassword] = useState('');
   const [portalLoggedIn, setPortalLoggedIn] = useState(false);
   const [activeFeeTab, setActiveFeeTab] = useState('primary');
+  const [copied, setCopied] = useState(false);
 
   if (!type) return null;
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText('https://dettroin-int-avinash-website.vercel.app/');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 3000);
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
@@ -19,6 +26,117 @@ const ResourceModal = ({ type, onClose }) => {
         >
           ✕
         </button>
+
+        {type === 'qr' && (
+          <div className="space-y-6 text-center">
+            <span className="bg-[#feb300] text-[#281900] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+              SCAN & EXPLORE
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#000666]">
+              Digital Prospectus & QR Code
+            </h3>
+            <p className="text-xs sm:text-sm text-[#454652] max-w-md mx-auto">
+              Scan this QR code with any smartphone camera to instantly access the official mobile campus tour and digital prospectus.
+            </p>
+
+            <div className="bg-[#f8f9fa] p-6 rounded-3xl border border-[#c6c5d4] inline-block shadow-inner my-2">
+              <svg
+                width="180"
+                height="180"
+                viewBox="0 0 100 100"
+                className="mx-auto"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="100" height="100" fill="white" rx="8" />
+                <path
+                  d="M10 10 h30 v30 h-30 z M15 15 h20 v20 h-20 z M20 20 h10 v10 h-10 z"
+                  fill="#000666"
+                />
+                <path
+                  d="M60 10 h30 v30 h-30 z M65 15 h20 v20 h-20 z M70 20 h10 v10 h-10 z"
+                  fill="#000666"
+                />
+                <path
+                  d="M10 60 h30 v30 h-30 z M15 65 h20 v20 h-20 z M20 70 h10 v10 h-10 z"
+                  fill="#000666"
+                />
+                <path
+                  d="M50 10 h5 v15 h-5 z M50 35 h15 v5 h-15 z M70 50 h20 v5 h-20 z M50 50 h10 v20 h-10 z M70 65 h20 v25 h-20 z M50 80 h15 v10 h-15 z M80 60 h10 v5 h-10 z"
+                  fill="#7e5700"
+                />
+                <circle cx="50" cy="50" r="6" fill="#feb300" />
+              </svg>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+              <button
+                onClick={handleCopyLink}
+                className="bg-[#000666] text-white text-xs font-bold px-6 py-3 rounded-full hover:bg-[#1a237e] transition-all flex items-center justify-center gap-2"
+              >
+                <span className="material-symbols-outlined text-base">link</span>
+                <span>{copied ? 'Link Copied to Clipboard!' : 'Copy Direct Link'}</span>
+              </button>
+            </div>
+          </div>
+        )}
+
+        {type === 'community' && (
+          <div className="space-y-6">
+            <div className="text-center space-y-2">
+              <span className="bg-[#e0e0ff] text-[#000666] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                COMMUNITY & PTA NETWORK
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#000666]">
+                Parent & Alumni Network
+              </h3>
+              <p className="text-xs sm:text-sm text-[#454652]">
+                Connect with the Parent-Teacher Association (PTA) and our global alumni community.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-[#f8f9fa] p-5 rounded-2xl border border-[#c6c5d4] space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-[#25D366]/10 text-[#075E54] flex items-center justify-center font-bold text-lg">
+                  💬
+                </div>
+                <h4 className="font-bold text-[#000666] text-base">Parent Broadcast Channel</h4>
+                <p className="text-xs text-[#454652] leading-relaxed">
+                  Join our official WhatsApp channel for daily announcements, emergency alerts, and circulars.
+                </p>
+                <a
+                  href="https://wa.me/919876543210?text=Hello,%20I%20am%20a%20parent%20and%20would%20like%20to%20join%20the%20KIS%20Parent%20Broadcast%20Group."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#25D366] text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-[#128C7E] transition-colors"
+                >
+                  Join Parent Channel
+                </a>
+              </div>
+
+              <div className="bg-[#f8f9fa] p-5 rounded-2xl border border-[#c6c5d4] space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-[#e0e0ff] text-[#000666] flex items-center justify-center font-bold text-lg">
+                  🎓
+                </div>
+                <h4 className="font-bold text-[#000666] text-base">Alumni Network Portal</h4>
+                <p className="text-xs text-[#454652] leading-relaxed">
+                  Register as a KIS alumnus to mentor current students and attend annual reunions.
+                </p>
+                <a
+                  href="mailto:alumni@kisaligarh.com?subject=KIS%20Alumni%20Registration%20Inquiry"
+                  className="inline-block bg-[#000666] text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-[#1a237e] transition-colors"
+                >
+                  Contact Alumni Office
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-[#ffdeac]/30 p-4 rounded-xl text-xs text-[#7e5700] space-y-1">
+              <p className="font-bold">Next PTA General Body Meeting:</p>
+              <p>Saturday, 15th August 2026 at 10:00 AM — School Auditorium & Online Stream</p>
+            </div>
+          </div>
+        )}
 
         {type === 'portal' && (
           <div className="space-y-6">
