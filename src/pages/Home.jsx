@@ -43,13 +43,13 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Media Frame (Hero Image - Eager Load) */}
+            {/* Right Media Frame (Real Krishna International School Campus Photo from Google Maps) */}
             <div className="relative reveal-right delay-200 z-10">
               <div className="rounded-3xl overflow-hidden shadow-2xl relative z-10 border-8 sm:border-12 border-white bg-white">
                 <img
                   className="w-full aspect-[4/3] object-cover relative z-10"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ991SFlV523K95wX_glO883i4BdH4_mAr1xV-VAw15LEXR07yIAWoXfKdxTHBUeQ3SaTA6Ps3rgHBhnE0TCD527o0xFktReoQvpt8HBwroau3AxF7bmKJxjMFEZS9fEXE2g1QADmEeD4wfTmWii1DaJ1cVnRfCTwoS8K4SObBV2-eNZdFimCRYuLKlCt9IKkX2m1TFFbP7iq-zO24VHUh-RAdFoBgtC_WJl9fEuWL_Bu_xBLNmqrgmn3cymlANk-tOTMNO11nbUOf"
-                  alt="Krishna International School Students"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7YcV-DXBEiLLc_Icdw-hVloxWZFVge5jIgi6Tse9JG0T_4eYwUuj82W93bnILacJFuNQUs8Gaap6ky3Lifqzo-PF2Z_zDgEHijep3UIxdA2o0WCnWdgL7_XuKHkKBnOJpnOFd_51q3OcKjmvABFYReXwMSZBUaZrJtl5hAPKBpylMdSqM96XQ57u1ZZL_2QihY5JzEDSHTJZQnc-frE6faqQJfCofggCY-2qa1P4RG16nzoRqLbrr2DGOFF8uOtg-yF5KhCnoUF_S"
+                  alt="Krishna International School Aligarh Campus Building"
                   loading="eager"
                   decoding="async"
                 />
