@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -9,7 +8,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 30) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -20,7 +19,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile drawer when route changes
   useEffect(() => {
     setIsMobileOpen(false);
   }, [location.pathname]);
@@ -30,138 +28,95 @@ const Navbar = () => {
     { name: 'About', path: '/about' },
     { name: 'Academics', path: '/academics' },
     { name: 'Admissions', path: '/admissions' },
-    { name: 'School Life', path: '/school-life' },
+    { name: 'Gallery', path: '/school-life' },
     { name: 'Contact', path: '/contact' },
   ];
 
   return (
-    <header
-      className={`sticky top-0 z-50 bg-primary border-b border-accent/20 transition-all duration-300 ${
-        isScrolled ? 'py-3 shadow-lg bg-primary/95 backdrop-blur-md' : 'py-5 shadow-md'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <span className="text-2xl md:text-3xl font-extrabold tracking-wider text-accent border-2 border-accent px-2 py-0.5 rounded group-hover:bg-accent group-hover:text-primary transition-colors">
-              KIS
-            </span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
-            {navLinks.map((link) => {
-              const isActive = location.pathname === link.path;
-              return (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`relative px-3 py-2 text-sm font-medium transition-colors rounded-md ${
-                    isActive ? 'text-accent font-semibold' : 'text-gray-200 hover:text-accent hover:bg-white/5'
-                  }`}
-                >
-                  {link.name}
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeIndicator"
-                      className="absolute bottom-0 left-3 right-3 h-0.5 bg-accent rounded-full"
-                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Mobile Hamburger Button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className="p-2 text-gray-200 hover:text-accent focus:outline-none"
-              aria-label="Toggle Navigation Menu"
-            >
-              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {isMobileOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
+    <nav className={`fixed top-0 w-full z-50 bg-white/90 glass-nav transition-all duration-300 ${isScrolled ? 'shadow-md py-3' : 'shadow-sm py-4'}`}>
+      <div className="flex justify-between items-center w-full px-6 md:px-16 max-w-[1360px] mx-auto">
+        {/* Brand */}
+        <Link to="/" className="flex items-center gap-3">
+          <div className="w-10 h-10 bg-[#000666] rounded-full flex items-center justify-center shadow-sm">
+            <span className="material-symbols-outlined text-white text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>school</span>
           </div>
+          <span className="font-bold text-xl md:text-2xl text-[#000666] tracking-tight font-headline-md">
+            Krishna International
+          </span>
+        </Link>
+
+        {/* Desktop Navigation Links */}
+        <div className="hidden md:flex gap-8 items-center">
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.path;
+            return (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-sm font-semibold transition-colors duration-200 ${
+                  isActive
+                    ? 'text-[#000666] font-bold border-b-2 border-[#7e5700] pb-1'
+                    : 'text-[#191c1d] hover:text-[#7e5700]'
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </div>
+
+        {/* Action Button */}
+        <div className="hidden md:flex items-center">
+          <Link
+            to="/admissions"
+            className="bg-[#000666] text-white px-7 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-all shadow hover:bg-[#1a237e]"
+          >
+            Enquiry Now
+          </Link>
+        </div>
+
+        {/* Mobile Toggle */}
+        <button
+          onClick={() => setIsMobileOpen(!isMobileOpen)}
+          className="md:hidden p-2 text-[#000666] focus:outline-none"
+          aria-label="Toggle Menu"
+        >
+          <span className="material-symbols-outlined text-3xl">
+            {isMobileOpen ? 'close' : 'menu'}
+          </span>
+        </button>
       </div>
 
-      {/* Mobile Slide-in Drawer */}
-      <AnimatePresence>
-        {isMobileOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsMobileOpen(false)}
-              className="fixed inset-0 bg-black/60 z-40 md:hidden"
-            />
-
-            {/* Slide-in Drawer */}
-            <motion.div
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'tween', duration: 0.3 }}
-              className="fixed top-0 right-0 bottom-0 w-64 bg-primary z-50 p-6 flex flex-col justify-between border-l border-accent/20 md:hidden shadow-2xl"
+      {/* Mobile Drawer */}
+      {isMobileOpen && (
+        <div className="md:hidden bg-white border-b border-[#c6c5d4] px-6 py-6 space-y-4 shadow-xl">
+          <div className="flex flex-col space-y-3">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`px-4 py-2 rounded-lg font-semibold ${
+                  location.pathname === link.path
+                    ? 'bg-[#000666] text-white'
+                    : 'text-[#191c1d] hover:bg-[#edeeef]'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+          <div className="pt-2 border-t border-[#c6c5d4]">
+            <Link
+              to="/admissions"
+              className="w-full block text-center bg-[#feb300] text-[#281900] font-bold py-3 rounded-full shadow"
             >
-              <div>
-                {/* Drawer Header */}
-                <div className="flex items-center justify-between pb-6 border-b border-accent/20 mb-6">
-                  <span className="text-2xl font-extrabold text-accent border-2 border-accent px-2 py-0.5 rounded">
-                    KIS
-                  </span>
-                  <button
-                    onClick={() => setIsMobileOpen(false)}
-                    className="text-gray-300 hover:text-accent p-1"
-                  >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-
-                {/* Mobile Links */}
-                <div className="flex flex-col space-y-2">
-                  {navLinks.map((link) => {
-                    const isActive = location.pathname === link.path;
-                    return (
-                      <Link
-                        key={link.path}
-                        to={link.path}
-                        className={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                          isActive
-                            ? 'bg-accent text-primary font-bold shadow'
-                            : 'text-gray-200 hover:bg-accent/10 hover:text-accent'
-                        }`}
-                      >
-                        {link.name}
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Drawer Footer */}
-              <div className="pt-6 border-t border-accent/20 text-xs text-gray-400 text-center">
-                © KIS School. All rights reserved.
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
-    </header>
+              Enquiry Now
+            </Link>
+          </div>
+        </div>
+      )}
+    </nav>
   );
 };
 
 export default Navbar;
-
