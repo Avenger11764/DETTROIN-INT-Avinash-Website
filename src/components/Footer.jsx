@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
+import ResourceModal from './ResourceModal';
 
 const Footer = () => {
+  const [activeModal, setActiveModal] = useState(null);
+
   const handleLogoClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -43,10 +47,42 @@ const Footer = () => {
         <div>
           <h4 className="font-bold text-lg mb-6 tracking-wide text-white">Resources</h4>
           <ul className="space-y-3.5 text-sm">
-            <li><a className="text-[#c4c6d2] hover:text-[#ffdeac] transition-all hover:translate-x-1 inline-block" href="#">Student Portal</a></li>
-            <li><a className="text-[#c4c6d2] hover:text-[#ffdeac] transition-all hover:translate-x-1 inline-block" href="#">Fee Structure</a></li>
-            <li><a className="text-[#c4c6d2] hover:text-[#ffdeac] transition-all hover:translate-x-1 inline-block" href="#">Privacy Policy</a></li>
-            <li><a className="text-[#c4c6d2] hover:text-[#ffdeac] transition-all hover:translate-x-1 inline-block" href="#">Terms of Service</a></li>
+            <li>
+              <button
+                type="button"
+                onClick={() => setActiveModal('portal')}
+                className="text-[#c4c6d2] hover:text-[#ffdeac] transition-all hover:translate-x-1 inline-block text-left"
+              >
+                Student Portal
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={() => setActiveModal('fee')}
+                className="text-[#c4c6d2] hover:text-[#ffdeac] transition-all hover:translate-x-1 inline-block text-left"
+              >
+                Fee Structure
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={() => setActiveModal('privacy')}
+                className="text-[#c4c6d2] hover:text-[#ffdeac] transition-all hover:translate-x-1 inline-block text-left"
+              >
+                Privacy Policy
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={() => setActiveModal('terms')}
+                className="text-[#c4c6d2] hover:text-[#ffdeac] transition-all hover:translate-x-1 inline-block text-left"
+              >
+                Terms of Service
+              </button>
+            </li>
           </ul>
         </div>
 
@@ -70,6 +106,8 @@ const Footer = () => {
       <div className="border-t border-white/10 py-6 text-center text-xs text-[#c4c6d2]">
         © 2026 Krishna International School Aligarh. Affiliated to C.B.S.E., Delhi. All rights reserved.
       </div>
+
+      <ResourceModal type={activeModal} onClose={() => setActiveModal(null)} />
     </footer>
   );
 };
