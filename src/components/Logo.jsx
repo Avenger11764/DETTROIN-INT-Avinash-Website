@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CrestShieldLogo = ({ size = 44 }) => (
   <svg
     width={size}

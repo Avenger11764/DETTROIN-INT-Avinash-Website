@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Contact = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -210,7 +210,7 @@ const Contact = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#c6c5d4] space-y-3 reveal-left hover-lift relative z-10">
-              <h4 className="font-bold text-[#000666] text-xl">Principal's Office</h4>
+              <h4 className="font-bold text-[#000666] text-xl">Principal&apos;s Office</h4>
               <p className="text-xs text-[#454652]">For academic inquiries & appointments</p>
               <p className="text-sm font-bold text-[#7e5700] pt-2">principal@kisaligarh.com</p>
             </div>

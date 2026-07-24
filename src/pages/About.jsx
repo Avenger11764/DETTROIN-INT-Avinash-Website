@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const alumniData = [
@@ -56,7 +55,7 @@ const About = () => {
               ESTABLISHED SINCE 2010
             </span>
             <h1 className="reveal-left delay-100 font-display-lg text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white">
-              Our Legacy, Your Child’s Future
+              Our Legacy, Your Child&apos;s Future
             </h1>
             <p className="reveal-left delay-200 font-body-lg text-base md:text-lg text-white/90 max-w-lg leading-relaxed">
               Nurturing minds and building character in the heart of Aligarh. Join us in our journey of educational excellence.
@@ -201,7 +200,7 @@ const About = () => {
                   <p className="text-[11px] text-[#454652] font-semibold">{alumnus.role}</p>
                 </div>
                 <p className="text-xs text-[#454652] italic leading-relaxed">
-                  "{alumnus.quote}"
+                  &quot;{alumnus.quote}&quot;
                 </p>
               </div>
             </div>
@@ -232,9 +231,9 @@ const About = () => {
                 />
               </div>
               <h3 className="font-headline-md text-2xl font-bold text-[#000666]">Mr. Praveen Sharma</h3>
-              <p className="text-xs text-[#7e5700] font-bold uppercase tracking-wider">Chairman's Message</p>
+              <p className="text-xs text-[#7e5700] font-bold uppercase tracking-wider">Chairman&apos;s Message</p>
               <p className="font-body-md text-sm text-[#454652] italic leading-relaxed">
-                "Education is not merely the accumulation of knowledge; it is the awakening of wisdom and character. At Krishna International, we strive to ignite that inner spark in every child."
+                &quot;Education is not merely the accumulation of knowledge; it is the awakening of wisdom and character. At Krishna International, we strive to ignite that inner spark in every child.&quot;
               </p>
             </div>
           </div>
@@ -251,9 +250,9 @@ const About = () => {
                 />
               </div>
               <h3 className="font-headline-md text-2xl font-bold text-[#000666]">Dr. Ritu Agarwal</h3>
-              <p className="text-xs text-[#7e5700] font-bold uppercase tracking-wider">Principal's Message</p>
+              <p className="text-xs text-[#7e5700] font-bold uppercase tracking-wider">Principal&apos;s Message</p>
               <p className="font-body-md text-sm text-[#454652] italic leading-relaxed">
-                "Our commitment is to foster academic excellence while ensuring every student develops critical thinking, empathy, and resilience needed for tomorrow's world."
+                &quot;Our commitment is to foster academic excellence while ensuring every student develops critical thinking, empathy, and resilience needed for tomorrow&apos;s world.&quot;
               </p>
             </div>
           </div>

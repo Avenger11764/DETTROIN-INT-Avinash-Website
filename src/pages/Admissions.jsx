@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Admissions = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);

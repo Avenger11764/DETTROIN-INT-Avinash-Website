@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from './Logo';
 
@@ -20,11 +20,8 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    setIsMobileOpen(false);
-  }, [location.pathname]);
-
   const handleLogoClick = () => {
+    setIsMobileOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -125,6 +122,7 @@ const Navbar = () => {
                 <Link
                   key={link.path}
                   to={link.path}
+                  onClick={() => setIsMobileOpen(false)}
                   className={`text-base font-semibold py-2 transition-colors ${
                     location.pathname === link.path ? 'text-[#000666] font-bold' : 'text-[#454652]'
                   }`}
@@ -136,6 +134,7 @@ const Navbar = () => {
             <div className="pt-2">
               <Link
                 to="/admissions"
+                onClick={() => setIsMobileOpen(false)}
                 className="block w-full text-center bg-[#feb300] text-[#281900] font-bold py-3 rounded-full shadow-md"
               >
                 Enquiry Now

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const clubsData = [
@@ -172,12 +171,12 @@ const SchoolLife = () => {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 relative z-10 reveal-zoom">
-        <div className="bg-[#000666] text-white rounded-3xl p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+        <div className="bg-[#000666] text-[#ffffff] rounded-3xl p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
           <div className="relative z-10 text-center md:text-left space-y-2">
-            <h2 className="font-display-lg text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+            <h2 className="font-display-lg text-3xl md:text-5xl font-extrabold text-[#ffffff] tracking-tight">
               Experience Krishna International Life
             </h2>
-            <p className="font-body-lg text-white/80 text-base md:text-lg max-w-xl">
+            <p className="font-body-lg text-[#ffffff]/80 text-base md:text-lg max-w-xl">
               Book a guided campus tour to visit our sports arenas, science labs, and meet our coaches.
             </p>
           </div>

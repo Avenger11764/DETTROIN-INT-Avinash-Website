@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const galleryCategories = ['All', 'Campus & Labs', 'Sports & Swimming', 'Events & Cultural'];
 
