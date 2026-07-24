@@ -1,4 +1,4 @@
-# DETTROIN-INT-[YourName]-Website
+# DETTROIN-INT-Avinash-Website
 
 **Full Name:** Avinash Bajpai  
 **Intern ID:** [Your Intern ID]  
