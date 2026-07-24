@@ -52,7 +52,7 @@ const sportsData = [
     badge: '400m Turf Track',
     icon: 'sports_soccer',
     description: 'Lush natural grass football ground surrounded by a 400m synthetic running track.',
-    img: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80',
+    img: 'https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&w=800&q=80',
   },
 ];
 
@@ -67,6 +67,8 @@ const SchoolLife = () => {
             className="w-full h-full object-cover"
             src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80"
             alt="Krishna International School Student Life"
+            loading="eager"
+            decoding="async"
           />
         </div>
         <div className="relative z-20 text-center text-white px-6 max-w-3xl">
@@ -83,7 +85,7 @@ const SchoolLife = () => {
       </section>
 
       {/* 2. Campus Clubs & Societies */}
-      <section className="py-16 max-w-[1360px] mx-auto px-6 md:px-16 relative z-1">
+      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-1">
         <div className="text-center mb-16 reveal-drop">
           <span className="text-[#7e5700] font-label-md text-sm font-bold uppercase tracking-wider">
             CO-CURRICULAR CLUBS
@@ -100,7 +102,7 @@ const SchoolLife = () => {
           {clubsData.map((club, idx) => (
             <div
               key={idx}
-              className={`bg-white rounded-[2.5rem] overflow-hidden shadow-md border border-[#c6c5d4] group hover-lift transition-all duration-500 relative z-10 reveal-zoom delay-${
+              className={`bg-white rounded-3xl overflow-hidden shadow-md border border-[#c6c5d4] group hover-lift transition-all duration-500 relative z-10 reveal-zoom delay-${
                 idx * 100
               }`}
             >
@@ -109,6 +111,8 @@ const SchoolLife = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-10"
                   src={club.img}
                   alt={club.title}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="p-6 space-y-3">
@@ -126,7 +130,7 @@ const SchoolLife = () => {
 
       {/* 3. Sports & Athletics Excellence */}
       <section className="bg-[#f3f4f5]/50 py-20 relative z-1">
-        <div className="max-w-[1360px] mx-auto px-6 md:px-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 reveal-drop">
             <span className="text-[#7e5700] font-label-md text-sm font-bold uppercase tracking-wider">
               ATHLETIC FACILITIES
@@ -143,7 +147,7 @@ const SchoolLife = () => {
             {sportsData.map((sport, idx) => (
               <div
                 key={idx}
-                className={`bg-white p-6 rounded-[2.5rem] shadow-md border border-[#c6c5d4] space-y-4 hover-lift relative z-10 reveal-fade delay-${
+                className={`bg-white p-6 rounded-3xl shadow-md border border-[#c6c5d4] space-y-4 hover-lift relative z-10 reveal-fade delay-${
                   idx * 100
                 }`}
               >
@@ -152,6 +156,8 @@ const SchoolLife = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-10"
                     src={sport.img}
                     alt={sport.title}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <span className="absolute top-3 right-3 bg-[#feb300] text-[#281900] text-xs font-bold px-3 py-1 rounded-full shadow-md z-20">
                     {sport.badge}
@@ -169,8 +175,8 @@ const SchoolLife = () => {
       </section>
 
       {/* 4. Join Us CTA Banner */}
-      <section className="max-w-[1360px] mx-auto px-6 md:px-16 my-16 relative z-10 reveal-zoom">
-        <div className="bg-[#000666] text-white rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 relative z-10 reveal-zoom">
+        <div className="bg-[#000666] text-white rounded-3xl p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
           <div className="relative z-10 text-center md:text-left space-y-2">
             <h2 className="font-display-lg text-3xl md:text-5xl font-extrabold text-white tracking-tight">
               Experience Krishna International Life

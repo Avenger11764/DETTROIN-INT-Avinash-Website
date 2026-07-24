@@ -43,13 +43,15 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Media Frame */}
+            {/* Right Media Frame (Hero Image - Eager Load) */}
             <div className="relative reveal-right delay-200 z-10">
               <div className="rounded-3xl overflow-hidden shadow-2xl relative z-10 border-8 sm:border-12 border-white bg-white">
                 <img
                   className="w-full aspect-[4/3] object-cover relative z-10"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ991SFlV523K95wX_glO883i4BdH4_mAr1xV-VAw15LEXR07yIAWoXfKdxTHBUeQ3SaTA6Ps3rgHBhnE0TCD527o0xFktReoQvpt8HBwroau3AxF7bmKJxjMFEZS9fEXE2g1QADmEeD4wfTmWii1DaJ1cVnRfCTwoS8K4SObBV2-eNZdFimCRYuLKlCt9IKkX2m1TFFbP7iq-zO24VHUh-RAdFoBgtC_WJl9fEuWL_Bu_xBLNmqrgmn3cymlANk-tOTMNO11nbUOf"
                   alt="Krishna International School Students"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
 
@@ -68,16 +70,22 @@ const Home = () => {
                       className="w-10 h-10 rounded-full border-2 border-white object-cover"
                       src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80"
                       alt="Parent 1"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <img
                       className="w-10 h-10 rounded-full border-2 border-white object-cover"
                       src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
                       alt="Parent 2"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <img
                       className="w-10 h-10 rounded-full border-2 border-white object-cover"
                       src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80"
                       alt="Parent 3"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div>
@@ -195,6 +203,8 @@ const Home = () => {
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-10"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtyAP9t5RkFs1y2bux6SvqESjJWLJDWxfhaQSMyA7Gzt4pPNpPgxffmM9ldaQTIQPRpf2NXGNNYMhy8bvka1WqXwTq5hwOduSw09rgYte60FrTLz9xi4JB0lLLXDoUyR95gRF71cPrQQU5SF-8YhPIVVtog6GwyCrXkXEtYJyi5AD3WxbKlnGpImTFhWX_xnSiLDvybTlGFyPONzCQ1UJw5j6BgnnH96mWgBcCVYA1CCX8bFHvc0rn0JMgPfZarFufxV6tTVBqa6PL"
                 alt="Smart Classrooms"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#000666]/90 via-[#000666]/30 to-transparent p-6 sm:p-8 flex items-end z-20">
                 <div>
@@ -209,6 +219,8 @@ const Home = () => {
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-10"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZzLiuyrZGUq3RvKP2l9rxwZ8dtAFSQykVbhKfBqnc-m-0RmUl5u5Wb7f5q90xdR9Yk00A566xyvRS_XWKunLuGqmEI_B2_nn4vhZXQmjkv9eHv9Y6lSVvOOd2Ldb2GQ4-sq9QbpeQ72DZlyd2XwZNkW18vNxuKaQcARE1IcRgZcHhgmof7f-4jdwECHhSG_lK9uJHaj-jol_cf4cYxps3BnoYwjNJd7DGFIHlqWEEwA0TCP2VTCyG4y9DDNCmjucYWBNvxYQ09HqN"
                 alt="Advanced Science Labs"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#000666]/90 via-[#000666]/30 to-transparent p-6 sm:p-8 flex items-end z-20">
                 <div>
@@ -223,6 +235,8 @@ const Home = () => {
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-10"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUmCdR-tvEKdw7Vzq0ygULEfMwNo1QnmjpxmLtxPxZvC6AVZPEYrxrhIVM4Sau8iMofROqmfnATCcXm4aKcGpEeo6Po5sXQsocEr-PwwD4Pt574LWV657hCpJ1tH7_DC3cTPOY-6xaW2tYAYJsYtYXPJO2lgp_ufiaWC08iAlHjgsh27Y-HZFCqhinM1IbKD5hs_h8Au-fhVCL4AcbdQmfVUO4wspI4P695JUSTqrb3zql59lIuAxtJh_LA3H7jJwYy08nGuyg6Pp2"
                 alt="Central Library"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#000666]/90 via-[#000666]/30 to-transparent p-6 sm:p-8 flex items-end z-20">
                 <div>
@@ -263,6 +277,8 @@ const Home = () => {
                   className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-[#000666]/20 flex-shrink-0 shadow-sm"
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80"
                   alt="Dr. Sunita Sharma"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div>
                   <p className="font-bold text-[#000666] text-sm sm:text-base">Dr. Sunita Sharma</p>
@@ -283,6 +299,8 @@ const Home = () => {
                   className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-[#000666]/20 flex-shrink-0 shadow-sm"
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
                   alt="Mr. Rajesh Khanna"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div>
                   <p className="font-bold text-[#000666] text-sm sm:text-base">Mr. Rajesh Khanna</p>
@@ -303,6 +321,8 @@ const Home = () => {
                   className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-[#000666]/20 flex-shrink-0 shadow-sm"
                   src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80"
                   alt="Mrs. Meera Verma"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div>
                   <p className="font-bold text-[#000666] text-sm sm:text-base">Mrs. Meera Verma</p>

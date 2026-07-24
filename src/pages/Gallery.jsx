@@ -95,6 +95,8 @@ const Gallery = () => {
             className="w-full h-full object-cover"
             src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80"
             alt="Krishna International School Campus Gallery"
+            loading="eager"
+            decoding="async"
           />
         </div>
         <div className="relative z-20 text-center text-white px-6">
@@ -108,7 +110,7 @@ const Gallery = () => {
       </section>
 
       {/* 2. Category Filter Pills & True CSS Masonry Layout */}
-      <section className="px-6 md:px-16 max-w-[1360px] mx-auto mb-20 relative z-1">
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-20 relative z-1">
         <div className="flex flex-wrap gap-3 mb-12 justify-center reveal-drop">
           {galleryCategories.map((cat) => (
             <button
@@ -131,7 +133,7 @@ const Gallery = () => {
             <div
               key={item.id}
               onClick={() => setSelectedImage(item)}
-              className={`break-inside-avoid relative overflow-hidden rounded-[2rem] shadow-lg border border-[#c6c5d4] group cursor-pointer hover-lift transition-all duration-500 bg-white relative z-10 reveal-zoom delay-${
+              className={`break-inside-avoid relative overflow-hidden rounded-3xl shadow-lg border border-[#c6c5d4] group cursor-pointer hover-lift transition-all duration-500 bg-white relative z-10 reveal-zoom delay-${
                 (idx % 4) * 100 + 100
               }`}
             >
@@ -140,6 +142,8 @@ const Gallery = () => {
                   className="w-full h-full object-cover block transition-transform duration-700 group-hover:scale-110 relative z-10"
                   src={item.img}
                   alt={item.title}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#000666]/90 via-[#000666]/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-20">
                   <span className="text-white font-label-md text-base md:text-lg font-bold flex items-center gap-2 drop-shadow-md">
@@ -155,7 +159,7 @@ const Gallery = () => {
 
       {/* 3. Event Highlights & Videos Section */}
       <section className="bg-[#f3f4f5]/50 py-20 relative z-1">
-        <div className="max-w-[1360px] mx-auto px-6 md:px-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 reveal-drop">
             <span className="text-[#7e5700] font-label-md text-sm font-bold uppercase tracking-wider">
               CAMPUS REELS
@@ -166,12 +170,14 @@ const Gallery = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-[2rem] shadow-sm border border-[#c6c5d4] space-y-4 reveal-left hover-lift relative z-10">
+            <div className="bg-white p-6 rounded-3xl shadow-sm border border-[#c6c5d4] space-y-4 reveal-left hover-lift relative z-10">
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-md">
                 <img
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?auto=format&fit=crop&w=800&q=80"
                   alt="Annual Cultural Fest"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <h4 className="font-bold text-[#000666] text-lg">Annual Cultural Fest</h4>
@@ -180,12 +186,14 @@ const Gallery = () => {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-[2rem] shadow-sm border border-[#c6c5d4] space-y-4 reveal-fade delay-100 hover-lift relative z-10">
+            <div className="bg-white p-6 rounded-3xl shadow-sm border border-[#c6c5d4] space-y-4 reveal-fade delay-100 hover-lift relative z-10">
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-md">
                 <img
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80"
                   alt="Sports Day Highlights"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <h4 className="font-bold text-[#000666] text-lg">Sports Day Highlights</h4>
@@ -194,12 +202,14 @@ const Gallery = () => {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-[2rem] shadow-sm border border-[#c6c5d4] space-y-4 reveal-right delay-200 hover-lift relative z-10">
+            <div className="bg-white p-6 rounded-3xl shadow-sm border border-[#c6c5d4] space-y-4 reveal-right delay-200 hover-lift relative z-10">
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-md">
                 <img
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80"
                   alt="Science Fair 2024"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <h4 className="font-bold text-[#000666] text-lg">Science Fair 2024</h4>
@@ -219,7 +229,7 @@ const Gallery = () => {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="bg-white rounded-[2rem] max-w-3xl w-full overflow-hidden shadow-2xl space-y-4 p-6 relative"
+            className="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl space-y-4 p-6 relative"
           >
             <button
               onClick={() => setSelectedImage(null)}

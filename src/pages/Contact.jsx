@@ -2,17 +2,31 @@ import React, { useState } from 'react';
 
 const Contact = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    phone: '',
+    email: '',
+    topic: 'General Inquiry',
+    message: '',
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormSubmitted(true);
+    setFormData({
+      fullName: '',
+      phone: '',
+      email: '',
+      topic: 'General Inquiry',
+      message: '',
+    });
     setTimeout(() => setFormSubmitted(false), 5000);
   };
 
   return (
     <div className="bg-[#f8f9fa]/40 text-[#191c1d] font-body-md overflow-x-hidden pt-20 relative z-1">
       {/* 1. Hero Header Section */}
-      <section className="relative overflow-hidden py-16 px-6 md:px-16 max-w-[1360px] mx-auto text-center z-1">
+      <section className="relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center z-1">
         <span className="reveal-drop bg-[#feb300] text-[#281900] px-5 py-2 rounded-full font-label-md text-xs font-bold uppercase tracking-wider inline-block mb-4 shadow-sm">
           WE ARE HERE TO HELP
         </span>
@@ -25,10 +39,10 @@ const Contact = () => {
       </section>
 
       {/* 2. Main Contact Grid */}
-      <section className="py-12 max-w-[1360px] mx-auto px-6 md:px-16 relative z-1">
+      <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-1">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left: Interactive Form (Slide Left Animation) */}
-          <div className="lg:col-span-7 bg-white p-8 md:p-12 rounded-[2.5rem] shadow-xl border border-[#c6c5d4] space-y-6 relative z-10 reveal-left">
+          {/* Left: Interactive Form */}
+          <div className="lg:col-span-7 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-[#c6c5d4] space-y-6 relative z-10 reveal-left">
             <h3 className="font-headline-lg text-2xl sm:text-3xl font-extrabold text-[#000666]">
               Send Us a Message
             </h3>
@@ -46,7 +60,10 @@ const Contact = () => {
                     <input
                       className="w-full bg-[#f3f4f5] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#000666] outline-none text-sm"
                       placeholder="e.g. Rahul Sharma"
+                      value={formData.fullName}
+                      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                       required
+                      minLength={3}
                       type="text"
                     />
                   </div>
@@ -55,7 +72,11 @@ const Contact = () => {
                     <input
                       className="w-full bg-[#f3f4f5] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#000666] outline-none text-sm"
                       placeholder="+91 98765 43210"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       required
+                      pattern="[0-9+\s-]{10,}"
+                      title="Please enter a valid phone number with at least 10 digits"
                       type="tel"
                     />
                   </div>
@@ -67,13 +88,19 @@ const Contact = () => {
                     <input
                       className="w-full bg-[#f3f4f5] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#000666] outline-none text-sm"
                       placeholder="rahul@example.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
                       type="email"
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="font-bold text-xs text-[#454652] uppercase tracking-wider">Inquiry Topic</label>
-                    <select className="w-full bg-[#f3f4f5] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#000666] outline-none text-sm text-[#191c1d]">
+                    <select
+                      className="w-full bg-[#f3f4f5] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#000666] outline-none text-sm text-[#191c1d]"
+                      value={formData.topic}
+                      onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
+                    >
                       <option>General Inquiry</option>
                       <option>Admissions 2026-27</option>
                       <option>School Fee Structure</option>
@@ -88,7 +115,10 @@ const Contact = () => {
                   <textarea
                     className="w-full bg-[#f3f4f5] border-none rounded-xl p-4 focus:ring-2 focus:ring-[#000666] outline-none text-sm h-36 resize-none"
                     placeholder="Please write your inquiry details here..."
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required
+                    minLength={10}
                   />
                 </div>
 
@@ -103,9 +133,9 @@ const Contact = () => {
             )}
           </div>
 
-          {/* Right: Quick Contact Cards & Info (Slide Right Animation) */}
+          {/* Right: Quick Contact Cards */}
           <div className="lg:col-span-5 space-y-6 relative z-10 reveal-right">
-            <div className="bg-white p-8 rounded-[2.5rem] shadow-md border border-[#c6c5d4] flex items-start gap-5 hover-lift">
+            <div className="bg-white p-8 rounded-3xl shadow-md border border-[#c6c5d4] flex items-start gap-5 hover-lift">
               <div className="w-14 h-14 bg-[#e0e0ff] text-[#000666] rounded-2xl flex items-center justify-center flex-shrink-0">
                 <span className="material-symbols-outlined text-3xl">location_on</span>
               </div>
@@ -117,7 +147,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-[2.5rem] shadow-md border border-[#c6c5d4] flex items-start gap-5 hover-lift">
+            <div className="bg-white p-8 rounded-3xl shadow-md border border-[#c6c5d4] flex items-start gap-5 hover-lift">
               <div className="w-14 h-14 bg-[#ffdeac] text-[#7e5700] rounded-2xl flex items-center justify-center flex-shrink-0">
                 <span className="material-symbols-outlined text-3xl">call</span>
               </div>
@@ -128,7 +158,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-[2.5rem] shadow-md border border-[#c6c5d4] flex items-start gap-5 hover-lift">
+            <div className="bg-white p-8 rounded-3xl shadow-md border border-[#c6c5d4] flex items-start gap-5 hover-lift">
               <div className="w-14 h-14 bg-[#e0e0ff] text-[#000666] rounded-2xl flex items-center justify-center flex-shrink-0">
                 <span className="material-symbols-outlined text-3xl">mail</span>
               </div>
@@ -143,8 +173,8 @@ const Contact = () => {
       </section>
 
       {/* 3. Google Maps Embedded Section */}
-      <section className="py-16 max-w-[1360px] mx-auto px-6 md:px-16 relative z-1 reveal-zoom">
-        <div className="bg-white p-6 rounded-[2.5rem] shadow-xl border border-[#c6c5d4] overflow-hidden space-y-4">
+      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-1 reveal-zoom">
+        <div className="bg-white p-6 rounded-3xl shadow-xl border border-[#c6c5d4] overflow-hidden space-y-4">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-4 pt-2">
             <div>
               <h3 className="font-headline-lg text-2xl font-bold text-[#000666]">Find Us on Google Maps</h3>
@@ -179,26 +209,26 @@ const Contact = () => {
 
       {/* 4. Department Directory Cards */}
       <section className="py-16 bg-[#edeeef]/40 relative z-1">
-        <div className="max-w-[1360px] mx-auto px-6 md:px-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 reveal-drop">
             <h2 className="font-headline-lg text-3xl font-extrabold text-[#000666]">Department Directory</h2>
             <p className="text-sm text-[#454652] mt-1">Direct contacts for specific administrative departments</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-[#c6c5d4] space-y-3 reveal-left hover-lift relative z-10">
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#c6c5d4] space-y-3 reveal-left hover-lift relative z-10">
               <h4 className="font-bold text-[#000666] text-xl">Principal's Office</h4>
               <p className="text-xs text-[#454652]">For academic inquiries & appointments</p>
               <p className="text-sm font-bold text-[#7e5700] pt-2">principal@kisaligarh.com</p>
             </div>
 
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-[#c6c5d4] space-y-3 reveal-fade delay-100 hover-lift relative z-10">
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#c6c5d4] space-y-3 reveal-fade delay-100 hover-lift relative z-10">
               <h4 className="font-bold text-[#000666] text-xl">Accounts & Fee Desk</h4>
               <p className="text-xs text-[#454652]">For fee payment & receipt queries</p>
               <p className="text-sm font-bold text-[#7e5700] pt-2">accounts@kisaligarh.com</p>
             </div>
 
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-[#c6c5d4] space-y-3 reveal-right delay-200 hover-lift relative z-10">
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#c6c5d4] space-y-3 reveal-right delay-200 hover-lift relative z-10">
               <h4 className="font-bold text-[#000666] text-xl">Transport Office</h4>
               <p className="text-xs text-[#454652]">For bus routes, timing & stops</p>
               <p className="text-sm font-bold text-[#7e5700] pt-2">transport@kisaligarh.com</p>

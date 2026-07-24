@@ -63,8 +63,8 @@ const Academics = () => {
 
   return (
     <div className="bg-[#f8f9fa]/40 text-[#191c1d] font-body-md overflow-x-hidden pt-20 relative z-1">
-      {/* 1. Hero Section (Drop & Slide Animations) */}
-      <section className="relative overflow-hidden py-20 px-6 md:px-16 max-w-[1360px] mx-auto z-1">
+      {/* 1. Hero Section */}
+      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-1">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="z-10 space-y-6">
             <span className="reveal-drop bg-[#feb300] text-[#281900] px-5 py-2 rounded-full font-label-md text-xs font-bold uppercase tracking-wider inline-block shadow-sm">
@@ -93,13 +93,15 @@ const Academics = () => {
             </div>
           </div>
 
-          {/* Right Photo Frame (Slide Right Animation) */}
+          {/* Right Photo Frame */}
           <div className="relative z-10 reveal-right delay-200">
-            <div className="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-video md:aspect-square border border-[#c6c5d4] bg-white">
+            <div className="rounded-3xl overflow-hidden shadow-2xl aspect-video md:aspect-square border border-[#c6c5d4] bg-white">
               <img
                 className="w-full h-full object-cover relative z-10"
                 src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
                 alt="Krishna International Classroom"
+                loading="eager"
+                decoding="async"
               />
             </div>
             {/* Decorative Elements */}
@@ -108,9 +110,9 @@ const Academics = () => {
         </div>
       </section>
 
-      {/* 2. Key Academic Stats (Zoom In Animations) */}
+      {/* 2. Key Academic Stats */}
       <section className="bg-[#000666] text-white py-14 relative z-10 shadow-lg">
-        <div className="max-w-[1360px] mx-auto px-6 md:px-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="reveal-zoom">
               <p className="text-4xl md:text-5xl font-extrabold text-[#feb300] mb-1">100%</p>
@@ -132,8 +134,8 @@ const Academics = () => {
         </div>
       </section>
 
-      {/* 3. Curriculum Stages (Slide Left & Slide Right Animations) */}
-      <section id="curriculum" className="py-24 max-w-[1360px] mx-auto px-6 md:px-16 relative z-1">
+      {/* 3. Curriculum Stages */}
+      <section id="curriculum" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-1">
         <div className="text-center mb-16 reveal-drop">
           <span className="text-[#7e5700] font-label-md text-sm font-bold uppercase tracking-wider">
             ACADEMIC PROGRESSION
@@ -147,7 +149,7 @@ const Academics = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8 items-start">
-          {/* Tab Selection Navigation (Slide Left) */}
+          {/* Tab Selection Navigation */}
           <div className="lg:w-1/3 w-full flex flex-col gap-4 relative z-10 reveal-left">
             <button
               onClick={() => setActiveTab('pre-primary')}
@@ -198,9 +200,9 @@ const Academics = () => {
             </button>
           </div>
 
-          {/* Tab Content Display Card (Slide Right) */}
+          {/* Tab Content Display Card */}
           <div className="lg:w-2/3 w-full relative z-10 reveal-right delay-100">
-            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl border border-[#c6c5d4] space-y-6">
+            <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-[#c6c5d4] space-y-6">
               <div className="flex items-center gap-4 mb-4">
                 <div className="bg-[#ffdeac] p-3.5 rounded-full text-[#7e5700]">
                   <span className="material-symbols-outlined text-2xl">{currentContent.icon}</span>
@@ -224,16 +226,22 @@ const Academics = () => {
               </div>
 
               <div className="mt-8 rounded-2xl overflow-hidden h-64 border border-[#c6c5d4] bg-white relative z-10 shadow-md">
-                <img className="w-full h-full object-cover relative z-10" src={currentContent.img} alt={currentContent.title} />
+                <img
+                  className="w-full h-full object-cover relative z-10"
+                  src={currentContent.img}
+                  alt={currentContent.title}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. Pedagogy & Holistic Growth (Slide Left & Right) */}
+      {/* 4. Pedagogy & Holistic Growth */}
       <section className="bg-[#edeeef]/40 py-20 relative z-1">
-        <div className="max-w-[1360px] mx-auto px-6 md:px-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* Left Info */}
             <div className="lg:w-1/2 space-y-8 reveal-left">
@@ -273,6 +281,8 @@ const Academics = () => {
                   className="w-full h-full object-cover relative z-10"
                   src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80"
                   alt="Science Lab Student"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="rounded-2xl overflow-hidden h-48 shadow-md border border-[#c6c5d4] bg-white">
@@ -280,6 +290,8 @@ const Academics = () => {
                   className="w-full h-full object-cover relative z-10"
                   src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80"
                   alt="Student Awards"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -287,8 +299,8 @@ const Academics = () => {
         </div>
       </section>
 
-      {/* 5. Teaching Faculty (Zoom & Fade Animations) */}
-      <section className="py-20 px-6 md:px-16 max-w-[1360px] mx-auto relative z-1">
+      {/* 5. Teaching Faculty */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-1">
         <div className="text-center mb-16 reveal-drop">
           <h2 className="font-headline-lg text-3xl md:text-4xl font-extrabold text-[#000666] mb-4">
             Meet Our Specialized Educators
@@ -300,12 +312,14 @@ const Academics = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Faculty Card 1 */}
-          <div className="bg-white rounded-[2rem] p-6 shadow-sm hover-lift border border-[#c6c5d4] text-center relative z-10 reveal-zoom">
+          <div className="bg-white rounded-3xl p-6 shadow-sm hover-lift border border-[#c6c5d4] text-center relative z-10 reveal-zoom">
             <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-[#1a237e] bg-white shadow-sm">
               <img
                 className="w-full h-full object-cover"
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80"
                 alt="Dr. Anita Sharma"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <h4 className="font-headline-md text-xl font-bold text-[#000666]">Dr. Anita Sharma</h4>
@@ -316,12 +330,14 @@ const Academics = () => {
           </div>
 
           {/* Faculty Card 2 */}
-          <div className="bg-white rounded-[2rem] p-6 shadow-sm hover-lift border border-[#c6c5d4] text-center relative z-10 reveal-zoom delay-100">
+          <div className="bg-white rounded-3xl p-6 shadow-sm hover-lift border border-[#c6c5d4] text-center relative z-10 reveal-zoom delay-100">
             <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-[#1a237e] bg-white shadow-sm">
               <img
                 className="w-full h-full object-cover"
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
                 alt="Mr. Rajesh Iyer"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <h4 className="font-headline-md text-xl font-bold text-[#000666]">Mr. Rajesh Iyer</h4>
@@ -332,12 +348,14 @@ const Academics = () => {
           </div>
 
           {/* Faculty Card 3 */}
-          <div className="bg-white rounded-[2rem] p-6 shadow-sm hover-lift border border-[#c6c5d4] text-center relative z-10 reveal-zoom delay-200">
+          <div className="bg-white rounded-3xl p-6 shadow-sm hover-lift border border-[#c6c5d4] text-center relative z-10 reveal-zoom delay-200">
             <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-[#1a237e] bg-white shadow-sm">
               <img
                 className="w-full h-full object-cover"
                 src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80"
                 alt="Mrs. Sunita Verma"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <h4 className="font-headline-md text-xl font-bold text-[#000666]">Mrs. Sunita Verma</h4>
@@ -348,12 +366,14 @@ const Academics = () => {
           </div>
 
           {/* Faculty Card 4 */}
-          <div className="bg-white rounded-[2rem] p-6 shadow-sm hover-lift border border-[#c6c5d4] text-center relative z-10 reveal-zoom delay-300">
+          <div className="bg-white rounded-3xl p-6 shadow-sm hover-lift border border-[#c6c5d4] text-center relative z-10 reveal-zoom delay-300">
             <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-[#1a237e] bg-white shadow-sm">
               <img
                 className="w-full h-full object-cover"
                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
                 alt="Mr. Vikram Chauhan"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <h4 className="font-headline-md text-xl font-bold text-[#000666]">Mr. Vikram Chauhan</h4>
@@ -365,9 +385,9 @@ const Academics = () => {
         </div>
       </section>
 
-      {/* 6. Admissions CTA (Zoom Animation) */}
-      <section className="max-w-[1360px] mx-auto px-6 md:px-16 my-16 relative z-10 reveal-zoom">
-        <div className="bg-[#feb300] rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">
+      {/* 6. Admissions CTA */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 relative z-10 reveal-zoom">
+        <div className="bg-[#feb300] rounded-3xl p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">
           <div className="relative z-10 text-center md:text-left space-y-2">
             <h2 className="font-display-lg text-3xl md:text-5xl font-extrabold text-[#281900] tracking-tight">
               Ready to Join Krishna International?

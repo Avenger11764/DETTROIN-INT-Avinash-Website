@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 const faqsData = [
   {
@@ -23,6 +22,12 @@ const faqsData = [
 const Admissions = () => {
   const [activeFaq, setActiveFaq] = useState(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    phone: '',
+    email: '',
+    grade: 'Nursery / KG',
+  });
 
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -31,21 +36,27 @@ const Admissions = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setFormSubmitted(true);
+    setFormData({
+      fullName: '',
+      phone: '',
+      email: '',
+      grade: 'Nursery / KG',
+    });
     setTimeout(() => setFormSubmitted(false), 5000);
   };
 
   return (
     <div className="bg-[#f8f9fa]/40 text-[#191c1d] font-body-md overflow-x-hidden pt-20 relative z-1">
-      {/* 1. Hero Section (Drop & Slide Animations) */}
+      {/* 1. Hero Section */}
       <section className="relative min-h-[580px] flex items-center overflow-hidden z-1">
-        <div className="max-w-[1360px] mx-auto px-6 md:px-16 w-full py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Copy */}
             <div className="space-y-6 z-10">
               <span className="reveal-drop inline-block px-5 py-2 rounded-full bg-[#feb300] text-[#281900] font-label-md text-xs font-bold uppercase tracking-wider shadow-sm">
                 ADMISSIONS OPEN 2026-27
               </span>
-              <h1 className="reveal-left delay-100 font-display-lg text-4xl sm:text-5xl lg:text-[60px] text-[#000666] font-extrabold leading-[1.12] tracking-tight">
+              <h1 className="reveal-left delay-100 font-display-lg text-4xl sm:text-5xl lg:text-6xl text-[#000666] font-extrabold leading-tight tracking-tight">
                 Begin Your Child's Journey of Excellence
               </h1>
               <p className="reveal-left delay-200 font-body-lg text-base md:text-lg text-[#454652] max-w-lg leading-relaxed">
@@ -67,14 +78,14 @@ const Admissions = () => {
               </div>
             </div>
 
-            {/* Right Card / Form Preview (Slide Right Animation) */}
+            {/* Right Card / Form Preview */}
             <div className="relative z-10 reveal-right delay-200" id="inquiry-form">
-              <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl border border-[#c6c5d4] space-y-6">
+              <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-[#c6c5d4] space-y-6">
                 <h3 className="font-headline-lg text-2xl font-bold text-[#000666]">
                   Admission Inquiry Form
                 </h3>
                 {formSubmitted ? (
-                  <div className="p-6 bg-[#e0e0ff] text-[#000767] rounded-2xl text-center space-y-2">
+                  <div className="p-6 bg-[#e0e0ff] text-[#000767] rounded-2xl text-center space-y-2 animate-fade-in">
                     <span className="material-symbols-outlined text-4xl text-[#000666]">check_circle</span>
                     <p className="font-bold text-lg">Inquiry Submitted!</p>
                     <p className="text-sm">Our admissions team will contact you shortly.</p>
@@ -86,7 +97,10 @@ const Admissions = () => {
                       <input
                         className="w-full bg-[#f3f4f5] border-none rounded-xl p-3.5 mt-1 focus:ring-2 focus:ring-[#000666] outline-none text-sm"
                         placeholder="e.g. Rajesh Kumar"
+                        value={formData.fullName}
+                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         required
+                        minLength={3}
                         type="text"
                       />
                     </div>
@@ -96,13 +110,21 @@ const Admissions = () => {
                         <input
                           className="w-full bg-[#f3f4f5] border-none rounded-xl p-3.5 mt-1 focus:ring-2 focus:ring-[#000666] outline-none text-sm"
                           placeholder="+91 98765 43210"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           required
+                          pattern="[0-9+\s-]{10,}"
+                          title="Please enter a valid phone number with at least 10 digits"
                           type="tel"
                         />
                       </div>
                       <div>
                         <label className="font-bold text-xs text-[#454652] uppercase tracking-wider">Grade Seeking</label>
-                        <select className="w-full bg-[#f3f4f5] border-none rounded-xl p-3.5 mt-1 focus:ring-2 focus:ring-[#000666] outline-none text-sm text-[#191c1d]">
+                        <select
+                          className="w-full bg-[#f3f4f5] border-none rounded-xl p-3.5 mt-1 focus:ring-2 focus:ring-[#000666] outline-none text-sm text-[#191c1d]"
+                          value={formData.grade}
+                          onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
+                        >
                           <option>Nursery / KG</option>
                           <option>Primary (Grade I-V)</option>
                           <option>Middle (Grade VI-VIII)</option>
@@ -115,6 +137,8 @@ const Admissions = () => {
                       <input
                         className="w-full bg-[#f3f4f5] border-none rounded-xl p-3.5 mt-1 focus:ring-2 focus:ring-[#000666] outline-none text-sm"
                         placeholder="parent@example.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         required
                         type="email"
                       />
@@ -133,9 +157,9 @@ const Admissions = () => {
         </div>
       </section>
 
-      {/* 2. Admission Process (Staggered Zoom & Fade Animations) */}
+      {/* 2. Admission Process */}
       <section className="py-20 bg-[#edeeef]/40 relative z-1" id="process">
-        <div className="max-w-[1360px] mx-auto px-6 md:px-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 reveal-drop">
             <span className="text-[#7e5700] font-label-md text-sm font-bold uppercase tracking-wider">
               SIMPLE & TRANSPARENT
@@ -146,7 +170,7 @@ const Admissions = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-[#c6c5d4] space-y-4 relative z-10 reveal-zoom hover-lift">
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#c6c5d4] space-y-4 relative z-10 reveal-zoom hover-lift">
               <div className="w-12 h-12 bg-[#000666] text-white rounded-full flex items-center justify-center font-bold text-xl">
                 1
               </div>
@@ -156,7 +180,7 @@ const Admissions = () => {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-[#c6c5d4] space-y-4 relative z-10 reveal-zoom delay-100 hover-lift">
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#c6c5d4] space-y-4 relative z-10 reveal-zoom delay-100 hover-lift">
               <div className="w-12 h-12 bg-[#000666] text-white rounded-full flex items-center justify-center font-bold text-xl">
                 2
               </div>
@@ -166,7 +190,7 @@ const Admissions = () => {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-[#c6c5d4] space-y-4 relative z-10 reveal-zoom delay-200 hover-lift">
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#c6c5d4] space-y-4 relative z-10 reveal-zoom delay-200 hover-lift">
               <div className="w-12 h-12 bg-[#000666] text-white rounded-full flex items-center justify-center font-bold text-xl">
                 3
               </div>
@@ -176,7 +200,7 @@ const Admissions = () => {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-[#c6c5d4] space-y-4 relative z-10 reveal-zoom delay-300 hover-lift">
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#c6c5d4] space-y-4 relative z-10 reveal-zoom delay-300 hover-lift">
               <div className="w-12 h-12 bg-[#feb300] text-[#281900] rounded-full flex items-center justify-center font-bold text-xl">
                 4
               </div>
@@ -189,8 +213,8 @@ const Admissions = () => {
         </div>
       </section>
 
-      {/* 3. Frequently Asked Questions (Fade & Drop Animations) */}
-      <section className="py-20 max-w-[1360px] mx-auto px-6 md:px-16 relative z-1">
+      {/* 3. Frequently Asked Questions */}
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-1">
         <div className="text-center mb-16 reveal-drop">
           <span className="text-[#7e5700] font-label-md text-sm font-bold uppercase tracking-wider">
             GOT QUESTIONS?

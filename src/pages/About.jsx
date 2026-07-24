@@ -17,12 +17,12 @@ const About = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#000666] via-[#000666]/90 to-transparent" />
         </div>
 
-        <div className="relative z-20 max-w-[1360px] mx-auto px-6 md:px-16 w-full py-20">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
           <div className="max-w-2xl space-y-6">
             <span className="reveal-drop inline-block px-5 py-2 rounded-full bg-[#feb300] text-[#281900] font-label-md text-xs font-bold uppercase tracking-wider shadow-sm">
               ESTABLISHED SINCE 2010
             </span>
-            <h1 className="reveal-left delay-100 font-display-lg text-4xl sm:text-5xl lg:text-[56px] font-extrabold leading-[1.12] tracking-tight text-white">
+            <h1 className="reveal-left delay-100 font-display-lg text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white">
               Our Legacy, Your Child’s Future
             </h1>
             <p className="reveal-left delay-200 font-body-lg text-base md:text-lg text-white/90 max-w-lg leading-relaxed">
@@ -48,15 +48,17 @@ const About = () => {
 
       {/* 2. History Section */}
       <section className="py-20 bg-[#f8f9fa]/50 relative z-1">
-        <div className="max-w-[1360px] mx-auto px-6 md:px-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Image Box */}
             <div className="relative z-10 reveal-left">
-              <div className="rounded-[2.5rem] overflow-hidden shadow-xl aspect-[4/3] border border-[#c6c5d4] bg-white">
+              <div className="rounded-3xl overflow-hidden shadow-xl aspect-[4/3] border border-[#c6c5d4] bg-white">
                 <img
                   className="w-full h-full object-cover relative z-10"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcOocSxmMBMezaBOHyKKiesAb43vBcBH00MrnjBKS86eVrp59EyDpuaoMGNBs27IuhCDkFunZKRK2T-X52NigY5crF8mPKvs2H1zhab7vws5b9dIxXl2iB1b1HqI0ObWx7HJgFC85TbWTEFqE49nBLWbqlAyFuTd0rFlSdZL8-6zC2LbdIJ8HLJzRvzOm7zWfLQk3w7ffMFB2v6pmy_-vcMEMu-d8mzyVs_CT7FdBgLxgvDLtaelCh3atQjAbVzwNULfja7CgDfauF"
                   alt="Krishna International History"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="reveal-zoom delay-200 absolute -bottom-6 -right-6 bg-[#feb300] text-[#281900] p-6 rounded-3xl shadow-lg font-bold text-center z-20">
@@ -96,7 +98,7 @@ const About = () => {
 
       {/* 3. Vision & Mission Cards */}
       <section className="py-20 bg-[#edeeef]/40 relative z-1">
-        <div className="max-w-[1360px] mx-auto px-6 md:px-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 reveal-drop">
             <span className="text-[#7e5700] font-label-md text-sm font-bold uppercase tracking-wider">
               OUR GUIDING LIGHT
@@ -107,7 +109,7 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-[#c6c5d4] space-y-4 relative z-10 reveal-left hover-lift">
+            <div className="bg-white p-10 rounded-3xl shadow-sm border border-[#c6c5d4] space-y-4 relative z-10 reveal-left hover-lift">
               <div className="w-14 h-14 bg-[#e0e0ff] text-[#000666] rounded-2xl flex items-center justify-center">
                 <span className="material-symbols-outlined text-3xl">visibility</span>
               </div>
@@ -117,7 +119,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-[#c6c5d4] space-y-4 relative z-10 reveal-right delay-100 hover-lift">
+            <div className="bg-white p-10 rounded-3xl shadow-sm border border-[#c6c5d4] space-y-4 relative z-10 reveal-right delay-100 hover-lift">
               <div className="w-14 h-14 bg-[#ffdeac] text-[#7e5700] rounded-2xl flex items-center justify-center">
                 <span className="material-symbols-outlined text-3xl">flag</span>
               </div>
@@ -131,7 +133,7 @@ const About = () => {
       </section>
 
       {/* 4. Leadership Section */}
-      <section className="py-20 max-w-[1360px] mx-auto px-6 md:px-16 relative z-1">
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-1">
         <div className="text-center mb-16 reveal-drop">
           <span className="text-[#7e5700] font-label-md text-sm font-bold uppercase tracking-wider">
             LEADERSHIP & GUIDANCE
@@ -143,13 +145,15 @@ const About = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Chairman */}
-          <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-md border border-[#c6c5d4] flex flex-col justify-between relative z-10 reveal-left hover-lift">
+          <div className="bg-white p-8 md:p-10 rounded-3xl shadow-md border border-[#c6c5d4] flex flex-col justify-between relative z-10 reveal-left hover-lift">
             <div className="space-y-4">
               <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[#1a237e] shadow-sm">
                 <img
                   className="w-full h-full object-cover"
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
                   alt="Chairman"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <h3 className="font-headline-md text-2xl font-bold text-[#000666]">Mr. Praveen Sharma</h3>
@@ -161,13 +165,15 @@ const About = () => {
           </div>
 
           {/* Principal */}
-          <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-md border border-[#c6c5d4] flex flex-col justify-between relative z-10 reveal-right delay-100 hover-lift">
+          <div className="bg-white p-8 md:p-10 rounded-3xl shadow-md border border-[#c6c5d4] flex flex-col justify-between relative z-10 reveal-right delay-100 hover-lift">
             <div className="space-y-4">
               <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[#1a237e] shadow-sm">
                 <img
                   className="w-full h-full object-cover"
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80"
                   alt="Principal"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <h3 className="font-headline-md text-2xl font-bold text-[#000666]">Dr. Ritu Agarwal</h3>
