@@ -40,21 +40,21 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 w-full z-50">
-      <div className="bg-[#000666] text-white py-1.5 px-4 text-xs font-semibold overflow-hidden border-b border-white/10 hidden sm:block">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-3 overflow-hidden">
+      <div className="bg-[#000666] text-white py-1.5 px-3 sm:px-4 text-xs font-semibold overflow-hidden border-b border-white/10">
+        <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
+          <div className="flex items-center gap-2 sm:gap-3 overflow-hidden w-full sm:w-auto">
             <span className="bg-[#feb300] text-[#281900] px-2 py-0.5 rounded font-bold text-[10px] uppercase tracking-wider shrink-0">
               ANNOUNCEMENT
             </span>
-            <div className="truncate text-white/90 text-xs">
-              <span className="inline-block mr-6">🎉 Admissions Open for Academic Session 2026–27</span>
-              <span className="inline-block mr-6 font-normal opacity-40">|</span>
-              <span className="inline-block mr-6">🏆 100% Pass Result in CBSE Class X & XII Board Exams</span>
-              <span className="inline-block mr-6 font-normal opacity-40">|</span>
-              <span className="inline-block">🚌 AC Transport Service Available Across All Aligarh Routes</span>
+            <div className="truncate text-white/90 text-xs sm:text-xs">
+              <span className="inline-block mr-4 sm:mr-6">🎉 Admissions Open 2026–27</span>
+              <span className="inline-block mr-4 sm:mr-6 font-normal opacity-40">|</span>
+              <span className="inline-block mr-4 sm:mr-6">🏆 100% Pass Result in CBSE Class X & XII</span>
+              <span className="inline-block mr-4 sm:mr-6 font-normal opacity-40">|</span>
+              <span className="inline-block">🚌 AC Transport Across Aligarh</span>
             </div>
           </div>
-          <div className="flex items-center gap-4 shrink-0 text-xs text-white/80 font-medium">
+          <div className="hidden md:flex items-center gap-4 shrink-0 text-xs text-white/80 font-medium">
             <a href="tel:+919876543210" className="hover:text-[#feb300] transition-colors flex items-center gap-1">
               <span className="material-symbols-outlined text-sm">call</span>
               <span>+91 98765 43210</span>
