@@ -1,7 +1,7 @@
 # DETTROIN-INT-Avinash-Website
 
 **Full Name:** Avinash Bajpai  
-**Intern ID:** [Intern ID]  
+**Intern ID:** [Intern ID]  [i didn't got any Intern id]
 **Email Address:** avinashbajpai11764@gmail.com  
 **GitHub Username:** Avenger11764 - https://github.com/Avenger11764  
 **Selected Website:** Krishna International School — https://kisaligarh.com/  
